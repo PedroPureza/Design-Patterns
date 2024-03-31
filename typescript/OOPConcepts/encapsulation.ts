@@ -40,3 +40,11 @@ myAccount.deposit(500);
 console.log("Balance after deposit: ", myAccount.getBalance());
 myAccount.withdraw(200);
 console.log("Balance after withdrawal: ", myAccount.getBalance());
+
+// Real world example
+// again with the date object
+
+const newDate = new Date();
+console.log("Date ", newDate.getFullYear());
+newDate.setFullYear(2022);
+console.log(newDate.getFullYear());

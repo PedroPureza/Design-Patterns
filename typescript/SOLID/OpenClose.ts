@@ -40,3 +40,8 @@ class RightDiscount {
     return customer.giveDiscount();
   }
 }
+
+let premiumCustomer: PremiumCustomer = new PremiumCustomer();
+let discount: RightDiscount = new RightDiscount();
+
+discount.giveDiscount(premiumCustomer); // 20

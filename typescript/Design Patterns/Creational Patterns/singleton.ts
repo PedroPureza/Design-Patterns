@@ -31,3 +31,8 @@ instance1.value = 10;
 console.log(instance1.value); // 10
 console.log(instance2.value); // 10
 console.log(instance1 === instance2); // trues
+
+// The Singleton pattern is useful when you need to make sure that only one instance of a class exists.
+// Examples: A logger class that logs messages to a file. You only need one instance of the logger class to log messages.
+// A global configuration class that stores configuration settings for an application.
+// You only need one instance of the configuration class to store the configuration settings.

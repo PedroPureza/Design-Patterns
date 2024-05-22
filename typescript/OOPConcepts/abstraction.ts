@@ -3,41 +3,83 @@ interface Shape {
   perimeter(): number;
 }
 
-class Circle implements Shape {
-  constructor(private radius: number) {}
+class Circle
+  implements Shape
+{
+  constructor(
+    private radius: number
+  ) {}
 
   area(): number {
-    return Math.PI * this.radius ** 2;
+    return (
+      Math.PI *
+      this.radius ** 2
+    );
   }
 
   perimeter(): number {
-    return 2 * Math.PI * this.radius;
+    return (
+      2 *
+      Math.PI *
+      this.radius
+    );
+  }
+
+  calculateArea(): number {
+    return this.area();
   }
 }
 
-class Rectangle implements Shape {
-  constructor(private width: number, private height: number) {}
+class Rectangle
+  implements Shape
+{
+  constructor(
+    private width: number,
+    private height: number
+  ) {}
 
   area(): number {
-    return this.width * this.height;
+    return (
+      this.width * this.height
+    );
   }
 
   perimeter(): number {
-    return 2 * (this.width + this.height);
+    return (
+      2 *
+      (this.width +
+        this.height)
+    );
+  }
+
+  calculateArea(): number {
+    return this.area();
   }
 }
 
-function calculateTotalArea(shape: Shape): number {
+function calculateTotalArea(
+  shape: Shape
+): number {
   return shape.area();
 }
 
 // Code above this is abstracted from user
 
 //User code
-let circle: Circle = new Circle(5);
-let rectangle: Rectangle = new Rectangle(4, 6);
-console.log("Area of Circle: ", calculateTotalArea(circle));
-console.log("Area of Reactangle: ", calculateTotalArea(rectangle));
+let circle: Circle =
+  new Circle(5);
+let rectangle: Rectangle =
+  new Rectangle(4, 6);
+console.log(
+  "Area of Circle: ",
+  calculateTotalArea(circle)
+);
+console.log(
+  "Area of Reactangle: ",
+  calculateTotalArea(
+    rectangle
+  )
+);
 
 // Example of uses of abstraction in day to day life
 
@@ -47,5 +89,8 @@ console.log("Area of Reactangle: ", calculateTotalArea(rectangle));
 const now = new Date();
 const date = now.getDate();
 const month = now.getMonth();
-const year = now.getFullYear();
-console.log(`Today's date is ${date}/${month}/${year}`);
+const year =
+  now.getFullYear();
+console.log(
+  `Today's date is ${date}/${month}/${year}`
+);

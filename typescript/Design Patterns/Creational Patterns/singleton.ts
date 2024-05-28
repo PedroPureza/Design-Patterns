@@ -36,3 +36,31 @@ console.log(instance1 === instance2); // trues
 // Examples: A logger class that logs messages to a file. You only need one instance of the logger class to log messages.
 // A global configuration class that stores configuration settings for an application.
 // You only need one instance of the configuration class to store the configuration settings.
+// A database connection class that connects to a database.
+// You only need one instance of the database connection class to connect to the database.
+
+class Logger {
+  private static instance: Logger;
+
+  private constructor() {}
+
+  public static getInstance(): Logger {
+    if (!Logger.instance) {
+      Logger.instance = new Logger();
+    }
+    return Logger.instance;
+  }
+
+  public log(message: string): void {
+    const timestamp = new Date().toLocaleString();
+    console.log(`${timestamp} - ${message}`);
+  }
+}
+
+let logger1 = Logger.getInstance();
+logger1.log("Logger 1 is logging a message");
+
+let logger2 = Logger.getInstance();
+logger2.log("Logger 2 is logging a message");
+
+//same instance
